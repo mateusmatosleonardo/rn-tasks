@@ -5,6 +5,7 @@ import Types from '../Types';
 import todayImage from '../../assets/imgs/today.jpg';
 import moment from 'moment';
 import 'moment/locale/pt-br';
+import Task from '../components/Task';
 
 const TasksList = () => {
   const today = moment().locale('pt-br').format('ddd, D [de] MMMM');
@@ -17,9 +18,12 @@ const TasksList = () => {
         </View>
       </ImageBackground>
       <View style={styles.taskList}>
-        <Text style={{color: '#fff'}}>Tarefa #01</Text>
-        <Text style={{color: '#fff'}}>Tarefa #02</Text>
-        <Text style={{color: '#fff'}}>Tarefa #03</Text>
+        <Task
+          desc="Comprar livro"
+          estimateAt={new Date()}
+          doneAt={new Date()}
+        />
+        <Task desc="Ler livro" estimateAt={new Date()} doneAt={null} />
       </View>
     </View>
   );
