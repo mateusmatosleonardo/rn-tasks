@@ -13,11 +13,13 @@ const TasksList = () => {
       <ImageBackground source={todayImage} style={styles.background}>
         <View style={styles.titleBar}>
           <Text style={styles.title}>Hoje</Text>
-          <Text>{today}</Text>
+          <Text style={styles.subtitle}>{today}</Text>
         </View>
       </ImageBackground>
       <View style={styles.taskList}>
-        <Text style={{color: '#fff'}}>TasksList</Text>
+        <Text style={{color: '#fff'}}>Tarefa #01</Text>
+        <Text style={{color: '#fff'}}>Tarefa #02</Text>
+        <Text style={{color: '#fff'}}>Tarefa #03</Text>
       </View>
     </View>
   );
@@ -40,6 +42,16 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: Types.fontFamily,
     fontSize: 50,
+    color: Types.colors.secondary,
+    marginLeft: 20,
+    marginBottom: 20,
+  },
+  subtitle: {
+    fontFamily: Types.fontFamily,
+    color: Types.colors.secondary,
+    fontSize: 20,
+    marginLeft: 20,
+    marginBottom: 30,
   },
 });
 
