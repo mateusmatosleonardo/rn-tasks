@@ -39,6 +39,7 @@ const TasksList = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fafafa',
   },
   background: {
     flex: 3,
