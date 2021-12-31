@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Types from '../Types';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import moment from 'moment';
+import 'moment/locale/pt-br';
 
 function getCheckView(doneAt) {
   if (doneAt != null) {
@@ -19,12 +21,16 @@ const Task = props => {
   const doneOrNotStyle =
     props.doneAt != null ? {textDecorationLine: 'line-through'} : {};
 
+  const formattedDate = moment(date).locale('pt-br').format('ddd D [de] MMMM');
+
+  const date = props.doneAt ? props.doneAt : props.estimateAt;
+
   return (
     <View style={styles.container}>
       <View style={styles.checkContainer}>{getCheckView(props.doneAt)}</View>
       <View>
         <Text style={[styles.desc, doneOrNotStyle]}>{props.desc}</Text>
-        <Text style={styles.date}>{props.estimateAt + ''}</Text>
+        <Text style={styles.date}>{formattedDate}</Text>
       </View>
     </View>
   );
