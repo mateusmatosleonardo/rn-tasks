@@ -5,6 +5,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 
+//commet
+
 function getCheckView(doneAt) {
   if (doneAt != null) {
     return (
