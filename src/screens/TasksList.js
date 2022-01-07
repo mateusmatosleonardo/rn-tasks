@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, ImageBackground, StyleSheet, StatusBar} from 'react-native';
+import {
+  View,
+  Text,
+  ImageBackground,
+  StyleSheet,
+  StatusBar,
+  FlatList,
+} from 'react-native';
 
 import Types from '../Types';
 import todayImage from '../../assets/imgs/today.jpg';
