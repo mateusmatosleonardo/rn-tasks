@@ -14,6 +14,8 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 import Task from '../components/Task';
 
+// componente principal
+
 const TasksList = () => {
   // state = {
   //   tasks: [
@@ -28,6 +30,7 @@ const TasksList = () => {
   const today = moment().locale('pt-br').format('ddd, D [de] MMMM');
   return (
     <>
+      {/* o código da status bar é para tirar a cor do background */}
       <StatusBar
         backgroundColor="transparent"
         translucent
@@ -55,13 +58,16 @@ const TasksList = () => {
 
 const styles = StyleSheet.create({
   container: {
+    // vai pegar 100% da tela
     flex: 1,
     backgroundColor: '#fafafa',
   },
   background: {
+    // background vai pegar 30% da tela
     flex: 3,
   },
   taskList: {
+    // esse componente vai pegar 70% da tela
     flex: 7,
   },
   titleBar: {
