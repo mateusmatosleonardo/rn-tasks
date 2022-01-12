@@ -15,6 +15,16 @@ import 'moment/locale/pt-br';
 import Task from '../components/Task';
 
 const TasksList = () => {
+  // state = {
+  //   tasks: [
+  //     {
+  //       id: Math.random(),
+  //       desc: 'Comprar Livro',
+  //       estimateAt: new Date(),
+  //     },
+  //   ],
+  // };
+
   const today = moment().locale('pt-br').format('ddd, D [de] MMMM');
   return (
     <>
