@@ -1,16 +1,11 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  StyleSheet,
-  StatusBar,
-  FlatList,
-} from 'react-native';
+import {View, Text, ImageBackground, StyleSheet, StatusBar} from 'react-native';
 
 import Types from '../Types';
 import todayImage from '../../assets/imgs/today.jpg';
+// lib que trabalha com datas
 import moment from 'moment';
+// parte que vai cuidar das traduções
 import 'moment/locale/pt-br';
 import Task from '../components/Task';
 
