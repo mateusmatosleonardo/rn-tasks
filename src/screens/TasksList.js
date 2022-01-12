@@ -22,10 +22,11 @@ const TasksList = () => {
   //   ],
   // };
 
+  // constante que recebe o moment para a formatação
   const today = moment().locale('pt-br').format('ddd, D [de] MMMM');
   return (
     <>
-      {/* o código da status bar é para tirar a cor do background */}
+      {/* o código para essa status bar é para tirar a cor do background */}
       <StatusBar
         backgroundColor="transparent"
         translucent
