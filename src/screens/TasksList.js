@@ -146,7 +146,8 @@ const TasksList = () => {
         </ImageBackground>
         <View style={styles.taskList}>
           <FlatList
-            indicatorStyle="black"
+            overScrollMode="never"
+            // indicatorStyle="black" dps tentar alterar o estilo do indicador
             data={this.state.tasks}
             keyExtractor={item => `${item.id}`}
             renderItem={({item}) => <Task {...item} />}
