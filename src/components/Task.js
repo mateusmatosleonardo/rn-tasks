@@ -18,6 +18,9 @@ function getCheckView(doneAt) {
 }
 
 const Task = props => {
+  // função de lógica para ver a se task foi concluída ou não
+  // se a props doneAt for != null, significa que ela foi concluída
+  // e ela estará com um 'line-through'
   const doneOrNotStyle =
     props.doneAt != null ? {textDecorationLine: 'line-through'} : {};
 
