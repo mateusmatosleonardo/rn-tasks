@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, ImageBackground, StyleSheet, StatusBar} from 'react-native';
+import {
+  View,
+  Text,
+  ImageBackground,
+  StyleSheet,
+  // StatusBar,
+  FlatList,
+} from 'react-native';
 
 import Types from '../Types';
 import todayImage from '../../assets/imgs/today.jpg';
@@ -12,26 +19,124 @@ import Task from '../components/Task';
 // componente principal
 
 const TasksList = () => {
-  // state = {
-  //   tasks: [
-  //     {
-  //       id: Math.random(),
-  //       desc: 'Comprar Livro',
-  //       estimateAt: new Date(),
-  //     },
-  //   ],
-  // };
+  // eslint-disable-next-line no-undef
+  state = {
+    tasks: [
+      {
+        id: Math.random(),
+        desc: 'Comprar livro',
+        estimateAt: new Date(),
+        doneAt: new Date(),
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+      {
+        id: Math.random(),
+        desc: 'Ler livro',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+    ],
+  };
 
   // constante que recebe o moment para a formatação
   const today = moment().locale('pt-br').format('ddd, D [de] MMMM');
   return (
     <>
       {/* o código para essa status bar é para tirar a cor do background */}
-      <StatusBar
+      {/* <StatusBar
         backgroundColor="transparent"
         translucent
         barStyle="light-content"
-      />
+      /> */}
       <View style={styles.container}>
         <ImageBackground source={todayImage} style={styles.background}>
           <View style={styles.titleBar}>
@@ -40,12 +145,18 @@ const TasksList = () => {
           </View>
         </ImageBackground>
         <View style={styles.taskList}>
-          <Task
+          <FlatList
+            indicatorStyle="black"
+            data={this.state.tasks}
+            keyExtractor={item => `${item.id}`}
+            renderItem={({item}) => <Task {...item} />}
+          />
+          {/* <Task
             desc="Comprar livro"
             estimateAt={new Date()}
             doneAt={new Date()}
           />
-          <Task desc="Ler livro" estimateAt={new Date()} doneAt={null} />
+          <Task desc="Ler livro" estimateAt={new Date()} doneAt={null} /> */}
         </View>
       </View>
     </>
