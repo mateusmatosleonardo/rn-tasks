@@ -5,8 +5,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 
-//commet
-
 function getCheckView(doneAt) {
   if (doneAt != null) {
     return (
@@ -46,10 +44,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 10,
   },
+  // estilo da list quando as tarefas estiverem concluídas
   checkContainer: {
     width: '20%',
     alignItems: 'center',
   },
+  // estilo da list quando as tarefas estiverem pendentes
   pending: {
     width: 25,
     height: 25,
