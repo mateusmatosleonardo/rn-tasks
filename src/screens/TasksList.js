@@ -127,6 +127,17 @@ const TasksList = () => {
     ],
   };
 
+  // eslint-disable-next-line no-unused-vars
+  const toggleTaks = taskId => {
+    const tasks = [...this.state.tasks];
+    tasks.forEach(task => {
+      if (task.id === taskId) {
+        task.doneAt = task.doneAt ? null : new Date();
+      }
+    });
+    this.setState({tasks});
+  };
+
   // constante que recebe o moment para a formatação
   const today = moment().locale('pt-br').format('ddd, D [de] MMMM');
   return (
@@ -151,7 +162,9 @@ const TasksList = () => {
             data={this.state.tasks}
             keyExtractor={item => `${item.id}`}
             // espalhando os atributos do objeto
-            renderItem={({item}) => <Task {...item} />}
+            renderItem={({item}) => (
+              <Task {...item} toggleTaks={this.toggleTaks} />
+            )}
           />
           {/* <Task
             desc="Comprar livro"
