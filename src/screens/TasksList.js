@@ -147,9 +147,10 @@ const TasksList = () => {
         <View style={styles.taskList}>
           <FlatList
             overScrollMode="never"
-            // indicatorStyle="black" dps tentar alterar o estilo do indicador
+            // indicatorStyle="black" (dps tentar alterar o estilo do indicador)
             data={this.state.tasks}
             keyExtractor={item => `${item.id}`}
+            // espalhando os atributos do objeto
             renderItem={({item}) => <Task {...item} />}
           />
           {/* <Task
