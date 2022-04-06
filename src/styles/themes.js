@@ -1,4 +1,4 @@
-export default {
+export const theme = {
   fontFamily: 'Lato',
   colors: {
     secondary: '#fff',

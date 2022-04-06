@@ -13,7 +13,7 @@ import {
   TextInput,
 } from 'react-native';
 import Task from '../components/Task';
-
+import ImgProfile from '../assets/imgs/me.jpg';
 const {width, height} = Dimensions.get('window');
 
 const TasksList = () => {
@@ -34,11 +34,8 @@ const TasksList = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.nameUser}>Mateus</Text>
-        <Image
-          source={require('../../assets/imgs/no_user.png')}
-          style={styles.imgProfile}
-        />
+        <Text style={[styles.nameUser]}>Mateus</Text>
+        <Image source={ImgProfile} style={styles.imgProfile} />
       </View>
       <View style={styles.taskList}>
         <FlatList
@@ -56,15 +53,6 @@ const TasksList = () => {
               textStyle={styles.nameTask}
               text={item.nameTask}
             />
-            // <View
-            //   style={[
-            //     styles.containerTask,
-            //     {
-            //       backgroundColor: colors[selected],
-            //     },
-            //   ]}>
-            //   <Text style={styles.nameTask}>{item.nameTask}</Text>
-            // </View>
           )}
         />
         <View />
@@ -212,7 +200,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 90,
     marginVertical: 15,
-    borderRadius: 20,
+    borderRadius: 12,
     backgroundColor: '#fafafa',
     elevation: 3,
     justifyContent: 'center',
@@ -238,7 +226,7 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   nameUser: {
-    fontSize: 18,
+    fontSize: 20,
     color: '#414040',
   },
   imgProfile: {
