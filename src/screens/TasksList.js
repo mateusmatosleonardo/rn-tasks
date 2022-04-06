@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import Task from '../components/Task';
 import ImgProfile from '../assets/imgs/me.jpg';
+import Icon from 'react-native-vector-icons/AntDesign';
 const {width, height} = Dimensions.get('window');
 
 const TasksList = () => {
@@ -83,7 +84,7 @@ const TasksList = () => {
                   backgroundColor: 'red',
                 }}
                 onPress={() => setVisible(!visible)}>
-                <Text style={{color: '#fafafa', fontSize: 20}}>''</Text>
+                <Icon name="close" size={22} color="#fafafa" />
               </TouchableOpacity>
             </View>
             <TextInput
@@ -91,9 +92,10 @@ const TasksList = () => {
               placeholder="Nome da tarefa"
               placeholderTextColor={'#000'}
               onChangeText={text => setText(text)}
+              maxLength={40}
             />
             <View style={{width: '100%', padding: 20}}>
-              <Text style={{color: '#414040'}}>
+              <Text style={{color: '#414040', fontSize: 14, fontWeight: '600'}}>
                 Escolha a prioridade da tarefa
               </Text>
               <View style={{width: '100%', marginTop: 15}}>
@@ -117,7 +119,9 @@ const TasksList = () => {
                       borderRadius: 4,
                     }}
                   />
-                  <Text style={{color: '#414040'}}>Alta prioridade</Text>
+                  <Text style={{color: '#414040', fontWeight: '300'}}>
+                    Alta prioridade
+                  </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() => setSelected('blue')}
@@ -140,7 +144,9 @@ const TasksList = () => {
                       borderRadius: 4,
                     }}
                   />
-                  <Text style={{color: '#414040'}}>Média prioridade</Text>
+                  <Text style={{color: '#414040', fontWeight: '300'}}>
+                    Média prioridade
+                  </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() => setSelected('green')}
@@ -163,7 +169,9 @@ const TasksList = () => {
                       borderRadius: 4,
                     }}
                   />
-                  <Text style={{color: '#414040'}}>Baixa prioridade</Text>
+                  <Text style={{color: '#414040', fontWeight: '300'}}>
+                    Baixa prioridade
+                  </Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -203,7 +211,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: '#fafafa',
     elevation: 3,
-    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   btnAddTask: {
     position: 'absolute',
@@ -243,8 +252,8 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '90%',
-    marginVertical: 32,
-    borderBottomWidth: 1,
+    marginVertical: 25,
+    borderBottomWidth: 0.5,
     borderBottomColor: '#414040',
     borderColor: '#000',
     color: '#414040',
