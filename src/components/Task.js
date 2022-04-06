@@ -30,7 +30,7 @@ const Task = props => {
 
   return (
     <View style={styles.container}>
-      <TouchableWithoutFeedback onPress={() => props.toggleTasks(props.id)}>
+      <TouchableWithoutFeedback onPress={() => props.toggleTask(props.id)}>
         <View style={styles.checkContainer}>{getCheckView(props.doneAt)}</View>
       </TouchableWithoutFeedback>
       <View>

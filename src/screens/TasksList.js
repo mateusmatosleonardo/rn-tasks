@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -16,126 +16,38 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 import Task from '../components/Task';
 
-// componente principal
-
 const TasksList = () => {
-  // eslint-disable-next-line no-undef
-  state = {
-    tasks: [
-      {
-        id: Math.random(),
-        desc: 'Comprar livro',
-        estimateAt: new Date(),
-        doneAt: new Date(),
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-      {
-        id: Math.random(),
-        desc: 'Ler livro',
-        estimateAt: new Date(),
-        doneAt: null,
-      },
-    ],
-  };
+  const [taskList, setTaskList] = useState([
+    {
+      id: Math.random(),
+      desc: 'Comprar livro',
+      estimateAt: new Date(),
+      doneAt: new Date(),
+    },
+    {
+      id: Math.random(),
+      desc: 'Ler livro',
+      estimateAt: new Date(),
+      doneAt: null,
+    },
+    {
+      id: Math.random(),
+      desc: 'Comprar livro',
+      estimateAt: new Date(),
+      doneAt: new Date(),
+    },
+  ]);
 
-  // eslint-disable-next-line no-unused-vars
-  const toggleTaks = taskId => {
-    const tasks = [...this.state.tasks];
-    tasks.forEach(task => {
-      if (task.id === taskId) {
-        task.doneAt = task.doneAt ? null : new Date();
-      }
-    });
-    this.setState({tasks});
+  const toggleTask = () => {
+    setTaskList([
+      ...taskList,
+      {
+        id: Math.random(),
+        desc: 'Exemplo',
+        estimateAt: new Date(),
+        doneAt: null,
+      },
+    ]);
   };
 
   // constante que recebe o moment para a formatação
@@ -159,19 +71,11 @@ const TasksList = () => {
           <FlatList
             overScrollMode="never"
             // indicatorStyle="black" (dps tentar alterar o estilo do indicador)
-            data={this.state.tasks}
+            data={taskList}
             keyExtractor={item => `${item.id}`}
             // espalhando os atributos do objeto
-            renderItem={({item}) => (
-              <Task {...item} toggleTaks={this.toggleTaks} />
-            )}
+            renderItem={({item}) => <Task {...item} toggleTask={toggleTask} />}
           />
-          {/* <Task
-            desc="Comprar livro"
-            estimateAt={new Date()}
-            doneAt={new Date()}
-          />
-          <Task desc="Ler livro" estimateAt={new Date()} doneAt={null} /> */}
         </View>
       </View>
     </>
