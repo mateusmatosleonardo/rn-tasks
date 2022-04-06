@@ -1,12 +1,32 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text, StyleSheet, Dimensions} from 'react-native';
 
-// lib q
+const {width, height} = Dimensions.get('window');
 
 const TasksList = () => {
-  // constante que recebe o moment para a formatação
-
-  return <View />;
+  return (
+    <View style={styles.container}>
+      <View style={styles.header} />
+      <View style={styles.taskList} />
+    </View>
+  );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fafafa',
+  },
+  header: {
+    width: '100%',
+    height: height * 0.1,
+    borderWidth: 0.5,
+    borderBottomColor: '#414040',
+  },
+  taskList: {
+    width: '100%',
+    height: height * 0.9,
+  },
+});
 
 export default TasksList;
