@@ -12,9 +12,11 @@ import {
   Modal,
   TextInput,
 } from 'react-native';
+// import AsyncStorage from '@react-native-community/async-storage';
 import Task from '../components/Task';
-import ImgProfile from '../assets/imgs/me.jpg';
+import ImgProfile from '../assets/imgs/eu.jpg';
 import Icon from 'react-native-vector-icons/AntDesign';
+// import Profile from 'react-native-vector-icons/FontAwesome';
 const {width, height} = Dimensions.get('window');
 
 const TasksList = () => {
@@ -36,7 +38,10 @@ const TasksList = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={[styles.nameUser]}>Mateus</Text>
-        <Image source={ImgProfile} style={styles.imgProfile} />
+        {/* <Profile name="user-circle" color="#414040" size={40} /> */}
+        <View style={styles.borderProfile}>
+          <Image source={ImgProfile} style={styles.imgProfile} />
+        </View>
       </View>
       <View style={styles.taskList}>
         <FlatList
@@ -198,7 +203,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottomColor: '#414040',
+    borderBottomColor: '#cdcdcd',
   },
   taskList: {
     width: '100%',
@@ -239,9 +244,14 @@ const styles = StyleSheet.create({
     color: '#414040',
   },
   imgProfile: {
-    width: 45,
-    height: 45,
+    width: 55,
+    height: 55,
     borderRadius: 50,
+  },
+  borderProfile: {
+    borderWidth: 2,
+    borderRadius: 50,
+    borderColor: '#616060',
   },
   flatStyle: {
     paddingHorizontal: 15,
