@@ -44,6 +44,12 @@ const TasksList = () => {
         </View>
       </View>
       <View style={styles.taskList}>
+        {/* <Image
+          source={require('../assets/imgs/bgApp.jpg')}
+          style={StyleSheet.absoluteFillObject}
+          blurRadius={15}
+          resizeMode="cover"
+        /> */}
         <FlatList
           showsVerticalScrollIndicator={false}
           overScrollMode="never"
@@ -63,6 +69,7 @@ const TasksList = () => {
         />
         <View />
       </View>
+
       <TouchableOpacity
         style={styles.btnAddTask}
         onPress={() => setVisible(!visible)}>
@@ -218,6 +225,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     alignItems: 'center',
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   btnAddTask: {
     position: 'absolute',
@@ -252,6 +260,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 50,
     borderColor: '#616060',
+    elevation: 8,
   },
   flatStyle: {
     paddingHorizontal: 15,
