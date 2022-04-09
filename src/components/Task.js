@@ -33,9 +33,17 @@ const Task = props => {
             <View />
           )}
         </TouchableOpacity>
-        <Text style={props.textStyle}>{props.text}</Text>
+        <Text
+          style={[
+            props.textStyle,
+            finalizado ? {textDecorationLine: 'line-through'} : {},
+          ]}>
+          {props.text}
+        </Text>
       </View>
-      <TouchableOpacity style={{padding: 4, marginRight: 8}}>
+      <TouchableOpacity
+        style={{padding: 4, marginRight: 8}}
+        onPress={props.onPress}>
         <Trash name="trash" size={20} color={'#616060'} />
       </TouchableOpacity>
     </View>

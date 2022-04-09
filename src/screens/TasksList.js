@@ -34,6 +34,16 @@ const TasksList = () => {
     setTask([...task, {id: Math.random(), nameTask: text, selected}]);
   };
 
+  const deletTask = id => {
+    let del = task.filter(function (val) {
+      if (val.id !== id) {
+        return val;
+      }
+    });
+
+    setTask(del);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -64,6 +74,7 @@ const TasksList = () => {
               ]}
               textStyle={styles.nameTask}
               text={item.nameTask}
+              onPress={() => deletTask(item.id)}
             />
           )}
         />
