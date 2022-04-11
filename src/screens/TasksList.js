@@ -141,9 +141,7 @@ const TasksList = () => {
                   style={[
                     styles.prioritySelected,
                     {
-                      ...(selected === 'red'
-                        ? {elevation: 4}
-                        : {elevation: 0.5}),
+                      ...(selected === 'red' ? {elevation: 6} : {elevation: 1}),
                     },
                   ]}>
                   <View
@@ -173,8 +171,8 @@ const TasksList = () => {
                     {marginTop: 10},
                     {
                       ...(selected === 'blue'
-                        ? {elevation: 4}
-                        : {elevation: 0.5}),
+                        ? {elevation: 6}
+                        : {elevation: 1}),
                     },
                   ]}>
                   <View
@@ -203,8 +201,8 @@ const TasksList = () => {
                     {marginTop: 10},
                     {
                       ...(selected === 'green'
-                        ? {elevation: 4}
-                        : {elevation: 0.5}),
+                        ? {elevation: 6}
+                        : {elevation: 1}),
                     },
                   ]}>
                   <View
