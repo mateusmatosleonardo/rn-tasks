@@ -67,6 +67,17 @@ const TasksList = () => {
           resizeMode="cover"
         /> */}
         <FlatList
+          ListEmptyComponent={
+            <Text
+              style={{
+                fontFamily: 'Montserrat-Regular',
+                color: '#919090',
+                textAlign: 'center',
+                marginVertical: 300,
+              }}>
+              Você não possui tarefas no momento
+            </Text>
+          }
           showsVerticalScrollIndicator={false}
           overScrollMode="never"
           contentContainerStyle={styles.flatStyle}
