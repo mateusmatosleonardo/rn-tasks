@@ -24,9 +24,9 @@ const TasksList = () => {
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState('red');
   const colors = {
-    red: '#ff6961',
-    blue: '#add8e6',
-    green: '#bdecb6',
+    red: '#F44B4B',
+    blue: '#7ACBD6',
+    green: '#63E478',
   };
   const [task, setTask] = useState([]);
 
@@ -232,15 +232,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#f2f2f2',
   },
   containerTask: {
-    width: '100%',
+    width: 8,
+    borderTopLeftRadius: 12,
+    borderBottomLeftRadius: 12,
     height: 90,
-    marginVertical: 15,
-    borderRadius: 12,
-    backgroundColor: '#fafafa',
-    elevation: 3,
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
   },
   btnAddTask: {
     position: 'absolute',
