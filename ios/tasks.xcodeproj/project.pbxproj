@@ -29,6 +29,21 @@
 		E244532596AC4787B1A7594F /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F6567CDB4514F62864C964B /* SimpleLineIcons.ttf */; };
 		D3E6FF3DD0F4441E96B75112 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29D7EFF2E85E4C54AFB20712 /* Zocial.ttf */; };
 		B5F587F72CBF40B599079A33 /* Lato.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D43B5DE5BDAC4489B283B765 /* Lato.ttf */; };
+		708712CC40E940E2A13AA7DB /* bg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 95D7FC6AD3A3456CA938CD04 /* bg.jpeg */; };
+		2AF906612EAB406DB71EC0B1 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE60FC31614628BDEAFE22 /* bg.jpg */; };
+		D7FAB1CB696F4B8CAA79D9CC /* bgApp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 802AFFF3E61D4B029EA8C684 /* bgApp.jpg */; };
+		135B2EE68AB64A4E8C2F48D6 /* eu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0749845AB71446E69A0DEA5B /* eu.jpg */; };
+		CCB6B2008F3E407988F6D9A2 /* login.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 707EA79CFCC64F51BA62FDAF /* login.jpg */; };
+		F8BE07CD34F74DC3A092ED52 /* logoArkos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1545C698485B4E1A97DEEE79 /* logoArkos.jpg */; };
+		EC779E862EFD4A61BD8744ED /* me.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA6E1A8853414121A533E10B /* me.jpg */; };
+		3651A09A21484B8FB8AC616F /* month.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B4936FCA2DF34793B602CF3C /* month.jpg */; };
+		8B5A16C4DCDA4DD699869B70 /* no_user.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CC44FE036824EAC966B7258 /* no_user.jpg */; };
+		C75EBB34EDE941AB93CBFFD4 /* no_user.png in Resources */ = {isa = PBXBuildFile; fileRef = BB27EED545F74170B3C6852E /* no_user.png */; };
+		33225A12D25849EDBBF67935 /* today.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E74EE0DF62574448915CE7BE /* today.jpg */; };
+		F1FA59605D7B48A1BE9EC194 /* tomorrow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9CDA751AFE384E7AAE1938F3 /* tomorrow.jpg */; };
+		51EA9C3E751244ABA37C18A7 /* week.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F89883ADA1964834B816F025 /* week.jpg */; };
+		E3331B1E597F4F0BA74CD9C2 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B9A4A76492AA41D58D75BAC8 /* Montserrat-Regular.ttf */; };
+		3E3D0B86205D422AAB44981C /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00811C92F04745E194A3F77A /* Montserrat-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +85,21 @@
 		3F6567CDB4514F62864C964B /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		29D7EFF2E85E4C54AFB20712 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D43B5DE5BDAC4489B283B765 /* Lato.ttf */ = {isa = PBXFileReference; name = "Lato.ttf"; path = "../assets/fonts/Lato.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		95D7FC6AD3A3456CA938CD04 /* bg.jpeg */ = {isa = PBXFileReference; name = "bg.jpeg"; path = "../src/assets/imgs/bg.jpeg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4DEE60FC31614628BDEAFE22 /* bg.jpg */ = {isa = PBXFileReference; name = "bg.jpg"; path = "../src/assets/imgs/bg.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		802AFFF3E61D4B029EA8C684 /* bgApp.jpg */ = {isa = PBXFileReference; name = "bgApp.jpg"; path = "../src/assets/imgs/bgApp.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0749845AB71446E69A0DEA5B /* eu.jpg */ = {isa = PBXFileReference; name = "eu.jpg"; path = "../src/assets/imgs/eu.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		707EA79CFCC64F51BA62FDAF /* login.jpg */ = {isa = PBXFileReference; name = "login.jpg"; path = "../src/assets/imgs/login.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1545C698485B4E1A97DEEE79 /* logoArkos.jpg */ = {isa = PBXFileReference; name = "logoArkos.jpg"; path = "../src/assets/imgs/logoArkos.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CA6E1A8853414121A533E10B /* me.jpg */ = {isa = PBXFileReference; name = "me.jpg"; path = "../src/assets/imgs/me.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B4936FCA2DF34793B602CF3C /* month.jpg */ = {isa = PBXFileReference; name = "month.jpg"; path = "../src/assets/imgs/month.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3CC44FE036824EAC966B7258 /* no_user.jpg */ = {isa = PBXFileReference; name = "no_user.jpg"; path = "../src/assets/imgs/no_user.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BB27EED545F74170B3C6852E /* no_user.png */ = {isa = PBXFileReference; name = "no_user.png"; path = "../src/assets/imgs/no_user.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E74EE0DF62574448915CE7BE /* today.jpg */ = {isa = PBXFileReference; name = "today.jpg"; path = "../src/assets/imgs/today.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9CDA751AFE384E7AAE1938F3 /* tomorrow.jpg */ = {isa = PBXFileReference; name = "tomorrow.jpg"; path = "../src/assets/imgs/tomorrow.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F89883ADA1964834B816F025 /* week.jpg */ = {isa = PBXFileReference; name = "week.jpg"; path = "../src/assets/imgs/week.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B9A4A76492AA41D58D75BAC8 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		00811C92F04745E194A3F77A /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; name = "Montserrat-SemiBold.ttf"; path = "../src/assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +209,21 @@
 				3F6567CDB4514F62864C964B /* SimpleLineIcons.ttf */,
 				29D7EFF2E85E4C54AFB20712 /* Zocial.ttf */,
 				D43B5DE5BDAC4489B283B765 /* Lato.ttf */,
+				95D7FC6AD3A3456CA938CD04 /* bg.jpeg */,
+				4DEE60FC31614628BDEAFE22 /* bg.jpg */,
+				802AFFF3E61D4B029EA8C684 /* bgApp.jpg */,
+				0749845AB71446E69A0DEA5B /* eu.jpg */,
+				707EA79CFCC64F51BA62FDAF /* login.jpg */,
+				1545C698485B4E1A97DEEE79 /* logoArkos.jpg */,
+				CA6E1A8853414121A533E10B /* me.jpg */,
+				B4936FCA2DF34793B602CF3C /* month.jpg */,
+				3CC44FE036824EAC966B7258 /* no_user.jpg */,
+				BB27EED545F74170B3C6852E /* no_user.png */,
+				E74EE0DF62574448915CE7BE /* today.jpg */,
+				9CDA751AFE384E7AAE1938F3 /* tomorrow.jpg */,
+				F89883ADA1964834B816F025 /* week.jpg */,
+				B9A4A76492AA41D58D75BAC8 /* Montserrat-Regular.ttf */,
+				00811C92F04745E194A3F77A /* Montserrat-SemiBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -291,6 +336,21 @@
 				E244532596AC4787B1A7594F /* SimpleLineIcons.ttf in Resources */,
 				D3E6FF3DD0F4441E96B75112 /* Zocial.ttf in Resources */,
 				B5F587F72CBF40B599079A33 /* Lato.ttf in Resources */,
+				708712CC40E940E2A13AA7DB /* bg.jpeg in Resources */,
+				2AF906612EAB406DB71EC0B1 /* bg.jpg in Resources */,
+				D7FAB1CB696F4B8CAA79D9CC /* bgApp.jpg in Resources */,
+				135B2EE68AB64A4E8C2F48D6 /* eu.jpg in Resources */,
+				CCB6B2008F3E407988F6D9A2 /* login.jpg in Resources */,
+				F8BE07CD34F74DC3A092ED52 /* logoArkos.jpg in Resources */,
+				EC779E862EFD4A61BD8744ED /* me.jpg in Resources */,
+				3651A09A21484B8FB8AC616F /* month.jpg in Resources */,
+				8B5A16C4DCDA4DD699869B70 /* no_user.jpg in Resources */,
+				C75EBB34EDE941AB93CBFFD4 /* no_user.png in Resources */,
+				33225A12D25849EDBBF67935 /* today.jpg in Resources */,
+				F1FA59605D7B48A1BE9EC194 /* tomorrow.jpg in Resources */,
+				51EA9C3E751244ABA37C18A7 /* week.jpg in Resources */,
+				E3331B1E597F4F0BA74CD9C2 /* Montserrat-Regular.ttf in Resources */,
+				3E3D0B86205D422AAB44981C /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

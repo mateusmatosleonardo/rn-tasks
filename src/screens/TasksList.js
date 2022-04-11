@@ -47,7 +47,9 @@ const TasksList = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={[styles.nameUser]}>Mateus</Text>
+        <Text style={[styles.nameUser, {fontFamily: 'Montserrat-SemiBold'}]}>
+          Mateus
+        </Text>
         {/* <Profile name="user-circle" color="#414040" size={40} /> */}
         <View style={styles.borderProfile}>
           <Image source={ImgProfile} style={styles.imgProfile} />
@@ -124,7 +126,12 @@ const TasksList = () => {
               maxLength={40}
             />
             <View style={{width: '100%', padding: 20}}>
-              <Text style={{color: '#414040', fontSize: 14, fontWeight: '600'}}>
+              <Text
+                style={{
+                  color: '#414040',
+                  fontSize: 14,
+                  fontFamily: 'Montserrat-SemiBold',
+                }}>
                 Escolha a prioridade da tarefa:
               </Text>
               <View style={{width: '100%', marginTop: 15}}>
@@ -143,13 +150,18 @@ const TasksList = () => {
                     style={{
                       width: 30,
                       height: '100%',
-                      backgroundColor: '#ff6961',
+                      backgroundColor: '#F44B4B',
+
                       marginRight: 10,
                       borderTopLeftRadius: 5,
                       borderBottomLeftRadius: 5,
                     }}
                   />
-                  <Text style={{color: '#414040', fontWeight: '300'}}>
+                  <Text
+                    style={{
+                      color: '#414040',
+                      fontFamily: 'Montserrat-Regular',
+                    }}>
                     Alta prioridade
                   </Text>
                 </TouchableOpacity>
@@ -169,13 +181,17 @@ const TasksList = () => {
                     style={{
                       width: 30,
                       height: '100%',
-                      backgroundColor: '#add8e6',
+                      backgroundColor: '#7ACBD6',
                       marginRight: 10,
                       borderTopLeftRadius: 5,
                       borderBottomLeftRadius: 5,
                     }}
                   />
-                  <Text style={{color: '#414040', fontWeight: '300'}}>
+                  <Text
+                    style={{
+                      color: '#414040',
+                      fontFamily: 'Montserrat-Regular',
+                    }}>
                     Média prioridade
                   </Text>
                 </TouchableOpacity>
@@ -195,13 +211,17 @@ const TasksList = () => {
                     style={{
                       width: 30,
                       height: '100%',
-                      backgroundColor: '#bdecb6',
+                      backgroundColor: '#63E478',
                       marginRight: 10,
                       borderTopLeftRadius: 5,
                       borderBottomLeftRadius: 5,
                     }}
                   />
-                  <Text style={{color: '#414040', fontWeight: '300'}}>
+                  <Text
+                    style={{
+                      color: '#414040',
+                      fontFamily: 'Montserrat-Regular',
+                    }}>
                     Baixa prioridade
                   </Text>
                 </TouchableOpacity>
@@ -210,7 +230,10 @@ const TasksList = () => {
             <TouchableOpacity
               style={styles.btnAddModal}
               onPress={() => addTask()}>
-              <Text style={{color: '#fefefe'}}>Adicionar</Text>
+              <Text
+                style={{color: '#fefefe', fontFamily: 'Montserrat-Regular'}}>
+                Adicionar
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -286,6 +309,7 @@ const styles = StyleSheet.create({
   },
   nameTask: {
     color: '#414040',
+    fontFamily: 'Montserrat-Regular',
   },
   input: {
     width: '90%',
@@ -294,6 +318,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#414040',
     borderColor: '#000',
     color: '#414040',
+    fontFamily: 'Montserrat-Regular',
   },
   prioritySelected: {
     width: '100%',
