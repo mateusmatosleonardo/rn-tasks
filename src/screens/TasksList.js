@@ -53,7 +53,11 @@ const TasksList = () => {
           <Image source={ImgProfile} style={styles.imgProfile} />
         </View>
       </View>
-      <View style={styles.taskList}>
+      <View
+        style={[
+          styles.taskList,
+          {borderTopRightRadius: 15, borderTopLeftRadius: 15},
+        ]}>
         {/* <Image
           source={require('../assets/imgs/bgApp.jpg')}
           style={StyleSheet.absoluteFillObject}
@@ -211,21 +215,21 @@ const TasksList = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa',
+    backgroundColor: '#0C202D',
   },
   header: {
     width: '100%',
     height: height * 0.1,
     paddingHorizontal: 15,
-    borderWidth: 0.5,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottomColor: '#cdcdcd',
+    backgroundColor: '#0C202D',
   },
   taskList: {
     width: '100%',
     height: height * 0.9,
+    backgroundColor: '#f2f2f2',
   },
   containerTask: {
     width: '100%',
@@ -260,7 +264,7 @@ const styles = StyleSheet.create({
   },
   nameUser: {
     fontSize: 20,
-    color: '#414040',
+    color: '#f2f2f2',
   },
   imgProfile: {
     width: 55,
@@ -268,9 +272,10 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   borderProfile: {
-    borderWidth: 2,
+    borderWidth: 1.5,
+    padding: 1,
     borderRadius: 50,
-    borderColor: '#616060',
+    borderColor: '#f2f2f2',
     elevation: 8,
   },
   flatStyle: {
