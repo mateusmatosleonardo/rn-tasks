@@ -96,7 +96,7 @@ const TasksList = () => {
         <View
           style={{
             flex: 1,
-            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
             justifyContent: 'center',
             alignItems: 'center',
           }}>
@@ -109,11 +109,11 @@ const TasksList = () => {
                   width: 30,
                   height: 30,
                   borderRadius: 50,
-                  elevation: 1,
-                  backgroundColor: 'red',
+                  elevation: 6,
+                  backgroundColor: '#0C202D',
                 }}
                 onPress={() => setVisible(!visible)}>
-                <Icon name="close" size={22} color="#fafafa" />
+                <Icon name="close" size={18} color="#fafafa" />
               </TouchableOpacity>
             </View>
             <TextInput
