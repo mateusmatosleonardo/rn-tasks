@@ -88,7 +88,9 @@ const TasksList = () => {
       <TouchableOpacity
         style={styles.btnAddTask}
         onPress={() => setVisible(!visible)}>
-        <Text style={{color: '#313030', fontSize: 25}}>+</Text>
+        <Text style={{color: '#fefefe', fontSize: 30, fontWeight: '300'}}>
+          +
+        </Text>
       </TouchableOpacity>
       <Modal transparent visible={visible} animationType="fade">
         <View
@@ -219,7 +221,7 @@ const styles = StyleSheet.create({
   },
   header: {
     width: '100%',
-    height: height * 0.1,
+    height: height * 0.12,
     paddingHorizontal: 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -243,14 +245,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     bottom: 30,
     right: 30,
-    width: 40,
-    height: 40,
+    width: 46,
+    height: 46,
     borderRadius: 50,
-    backgroundColor: '#fafafa',
+    backgroundColor: '#0C202D',
     elevation: 6,
   },
   modal: {
-    width: width * 0.8,
+    width: width * 0.88,
     height: height * 0.5,
     borderRadius: 12,
     alignItems: 'center',
