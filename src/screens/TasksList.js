@@ -125,7 +125,7 @@ const TasksList = () => {
             />
             <View style={{width: '100%', padding: 20}}>
               <Text style={{color: '#414040', fontSize: 14, fontWeight: '600'}}>
-                Escolha a prioridade da tarefa
+                Escolha a prioridade da tarefa:
               </Text>
               <View style={{width: '100%', marginTop: 15}}>
                 <TouchableOpacity
@@ -141,11 +141,12 @@ const TasksList = () => {
                   ]}>
                   <View
                     style={{
-                      width: 80,
-                      height: 20,
+                      width: 30,
+                      height: '100%',
                       backgroundColor: '#ff6961',
-                      marginRight: 5,
-                      borderRadius: 4,
+                      marginRight: 10,
+                      borderTopLeftRadius: 5,
+                      borderBottomLeftRadius: 5,
                     }}
                   />
                   <Text style={{color: '#414040', fontWeight: '300'}}>
@@ -166,11 +167,12 @@ const TasksList = () => {
                   ]}>
                   <View
                     style={{
-                      width: 80,
-                      height: 20,
+                      width: 30,
+                      height: '100%',
                       backgroundColor: '#add8e6',
-                      marginRight: 5,
-                      borderRadius: 4,
+                      marginRight: 10,
+                      borderTopLeftRadius: 5,
+                      borderBottomLeftRadius: 5,
                     }}
                   />
                   <Text style={{color: '#414040', fontWeight: '300'}}>
@@ -191,11 +193,12 @@ const TasksList = () => {
                   ]}>
                   <View
                     style={{
-                      width: 80,
-                      height: 20,
+                      width: 30,
+                      height: '100%',
                       backgroundColor: '#bdecb6',
-                      marginRight: 5,
-                      borderRadius: 4,
+                      marginRight: 10,
+                      borderTopLeftRadius: 5,
+                      borderBottomLeftRadius: 5,
                     }}
                   />
                   <Text style={{color: '#414040', fontWeight: '300'}}>
@@ -204,8 +207,10 @@ const TasksList = () => {
                 </TouchableOpacity>
               </View>
             </View>
-            <TouchableOpacity onPress={() => addTask()}>
-              <Text style={{color: '#212121'}}>ADD</Text>
+            <TouchableOpacity
+              style={styles.btnAddModal}
+              onPress={() => addTask()}>
+              <Text style={{color: '#fefefe'}}>Adicionar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -253,7 +258,7 @@ const styles = StyleSheet.create({
   },
   modal: {
     width: width * 0.88,
-    height: height * 0.5,
+    height: height * 0.52,
     borderRadius: 12,
     alignItems: 'center',
     backgroundColor: '#fafafa',
@@ -298,7 +303,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fafafa',
     elevation: 0.5,
     borderRadius: 8,
-    paddingHorizontal: 5,
+  },
+  btnAddModal: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '45%',
+    height: 35,
+    borderRadius: 8,
+    elevation: 6,
+    backgroundColor: '#0C202D',
   },
 });
 
