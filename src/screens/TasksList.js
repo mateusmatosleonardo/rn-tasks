@@ -1,37 +1,55 @@
 /* eslint-disable no-shadow */
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
   StyleSheet,
   Dimensions,
   FlatList,
-  Image,
   TouchableOpacity,
   Modal,
   TextInput,
+  ActivityIndicator,
 } from 'react-native';
-// import AsyncStorage from '@react-native-community/async-storage';
+import {api} from '../api';
 import Task from '../components/Task';
-import ImgProfile from '../assets/imgs/eu.jpg';
 import Icon from 'react-native-vector-icons/AntDesign';
-// import Profile from 'react-native-vector-icons/FontAwesome';
+import Profile from 'react-native-vector-icons/FontAwesome';
+
 const {width, height} = Dimensions.get('window');
 
 const TasksList = () => {
   const [text, setText] = useState('');
   const [visible, setVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState('red');
+  const [task, setTask] = useState([]);
   const colors = {
     red: '#F44B4B',
     blue: '#7ACBD6',
     green: '#63E478',
   };
-  const [task, setTask] = useState([]);
+
+  const Loading = () => {
+    return <ActivityIndicator color={'#818080'} size={'large'} />;
+  };
+
+  const getTask = async () => {
+    await api
+      .get('/task')
+      .then(({data}) => {
+        setTask(data);
+        console.log(JSON.stringify(data));
+      })
+      .catch(err => {
+        console.log(err) + 'ocorreu um erro na requisição';
+      });
+  };
 
   const addTask = () => {
-    setTask([...task, {id: Math.random(), nameTask: text, selected}]);
+    setTask([...task, {id: Math.random(), content: text, selected}]);
+    setText('');
   };
 
   const deletTask = id => {
@@ -44,15 +62,24 @@ const TasksList = () => {
     setTask(del);
   };
 
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      getTask();
+      setLoading(false);
+    }, 1000);
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={[styles.nameUser, {fontFamily: 'Montserrat-SemiBold'}]}>
           Mateus
         </Text>
-        {/* <Profile name="user-circle" color="#414040" size={40} /> */}
+
         <View style={styles.borderProfile}>
-          <Image source={ImgProfile} style={styles.imgProfile} />
+          <Profile name="user-circle" color="#414040" size={42} />
+          {/* <Image source={ImgProfile} style={styles.imgProfile} /> */}
         </View>
       </View>
       <View
@@ -68,15 +95,26 @@ const TasksList = () => {
         /> */}
         <FlatList
           ListEmptyComponent={
-            <Text
-              style={{
-                fontFamily: 'Montserrat-Regular',
-                color: '#919090',
-                textAlign: 'center',
-                marginVertical: 300,
-              }}>
-              Você não possui tarefas no momento
-            </Text>
+            loading ? (
+              <View
+                style={{
+                  height: height * 0.9,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <Loading />
+              </View>
+            ) : (
+              <Text
+                style={{
+                  fontFamily: 'Montserrat-Regular',
+                  color: '#919090',
+                  textAlign: 'center',
+                  marginVertical: 300,
+                }}>
+                Você não possui tarefas no momento!
+              </Text>
+            )
           }
           showsVerticalScrollIndicator={false}
           overScrollMode="never"
@@ -90,7 +128,7 @@ const TasksList = () => {
                 {backgroundColor: colors[item.selected]},
               ]}
               textStyle={styles.nameTask}
-              text={item.nameTask}
+              text={item.content}
               onPress={() => deletTask(item.id)}
             />
           )}
@@ -237,6 +275,7 @@ const TasksList = () => {
               </View>
             </View>
             <TouchableOpacity
+              disabled={text === '' ? true : false}
               style={styles.btnAddModal}
               onPress={() => addTask()}>
               <Text
@@ -348,5 +387,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#0C202D',
   },
 });
+
+/*
+  * código que posso usar no futuro kk
+<Text
+                style={{
+                  fontFamily: 'Montserrat-Regular',
+                  color: '#919090',
+                  textAlign: 'center',
+                  marginVertical: 300,
+                }}>
+                Você não possui tarefas no momento!
+              </Text>
+*/
 
 export default TasksList;
