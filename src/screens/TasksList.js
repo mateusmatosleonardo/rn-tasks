@@ -11,6 +11,7 @@ import {
   Modal,
   TextInput,
   ActivityIndicator,
+  RefreshControl,
 } from 'react-native';
 import {api} from '../api';
 import Task from '../components/Task';
@@ -21,6 +22,7 @@ const {width, height} = Dimensions.get('window');
 
 const TasksList = () => {
   const [text, setText] = useState('');
+  const [refresh, setRefresh] = useState(false);
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState('red');
@@ -32,7 +34,7 @@ const TasksList = () => {
   };
 
   const Loading = () => {
-    return <ActivityIndicator color={'#818080'} size={'large'} />;
+    return <ActivityIndicator color={'#616060'} size={'large'} />;
   };
 
   const getTask = async () => {
@@ -40,6 +42,9 @@ const TasksList = () => {
       .get('/task')
       .then(({data}) => {
         setTask(data);
+        setTimeout(() => {
+          setRefresh(false);
+        }, 2000);
         console.log(JSON.stringify(data));
       })
       .catch(err => {
@@ -47,19 +52,32 @@ const TasksList = () => {
       });
   };
 
-  const addTask = () => {
-    setTask([...task, {id: Math.random(), content: text, selected}]);
-    setText('');
+  const createTask = async () => {
+    await api
+      .post('/task', {
+        content: text,
+        selected: `${selected}`,
+      })
+      .catch(err => {
+        console.log({...err});
+      });
+    setTask(task.concat({content: text, selected: `${selected}`}));
   };
 
-  const deletTask = id => {
-    let del = task.filter(function (val) {
-      if (val.id !== id) {
-        return val;
-      }
-    });
+  // const addTask = () => {
+  //   setTask([...task, {id: Math.random(), content: text, selected}]);
+  //   setText('');
+  // };
 
-    setTask(del);
+  const deletTask = async id => {
+    await api
+      .delete(`/task/${id}`)
+      .then(() => {
+        setTask(task.filter(task => task.id !== id));
+      })
+      .catch(err => {
+        console.log(err) + 'ocorreu um erro na requisição';
+      });
   };
 
   useEffect(() => {
@@ -67,7 +85,7 @@ const TasksList = () => {
     setTimeout(() => {
       getTask();
       setLoading(false);
-    }, 1000);
+    }, 1500);
   }, []);
 
   return (
@@ -115,6 +133,9 @@ const TasksList = () => {
                 Você não possui tarefas no momento!
               </Text>
             )
+          }
+          refreshControl={
+            <RefreshControl refreshing={refresh} onRefresh={() => getTask()} />
           }
           showsVerticalScrollIndicator={false}
           overScrollMode="never"
@@ -277,7 +298,7 @@ const TasksList = () => {
             <TouchableOpacity
               disabled={text === '' ? true : false}
               style={styles.btnAddModal}
-              onPress={() => addTask()}>
+              onPress={() => createTask()}>
               <Text
                 style={{color: '#fefefe', fontFamily: 'Montserrat-Regular'}}>
                 Adicionar
