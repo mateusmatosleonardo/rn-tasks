@@ -14,7 +14,7 @@ const Task = props => {
         marginVertical: 15,
         borderRadius: 12,
         backgroundColor: '#fafafa',
-        elevation: 8,
+        elevation: 4,
         alignItems: 'center',
         flexDirection: 'row',
       }}>

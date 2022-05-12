@@ -10,21 +10,18 @@ import {
   TouchableOpacity,
   Modal,
   TextInput,
-  ActivityIndicator,
-  RefreshControl,
 } from 'react-native';
 import {api} from '../api';
 import Task from '../components/Task';
 import Icon from 'react-native-vector-icons/AntDesign';
+import Clipboard from 'react-native-vector-icons/FontAwesome5';
 import Profile from 'react-native-vector-icons/FontAwesome';
 
 const {width, height} = Dimensions.get('window');
 
 const TasksList = () => {
   const [text, setText] = useState('');
-  const [refresh, setRefresh] = useState(false);
   const [visible, setVisible] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState('red');
   const [task, setTask] = useState([]);
   const colors = {
@@ -33,18 +30,12 @@ const TasksList = () => {
     green: '#63E478',
   };
 
-  const Loading = () => {
-    return <ActivityIndicator color={'#616060'} size={'large'} />;
-  };
-
-  const getTask = async () => {
-    await api
+  const getTask = () => {
+    api
       .get('/task')
       .then(({data}) => {
         setTask(data);
-        setTimeout(() => {
-          setRefresh(false);
-        }, 2000);
+        setTimeout(() => {}, 2000);
         console.log(JSON.stringify(data));
       })
       .catch(err => {
@@ -69,8 +60,8 @@ const TasksList = () => {
   //   setText('');
   // };
 
-  const deletTask = async id => {
-    await api
+  const deletTask = id => {
+    api
       .delete(`/task/${id}`)
       .then(() => {
         setTask(task.filter(task => task.id !== id));
@@ -81,61 +72,37 @@ const TasksList = () => {
   };
 
   useEffect(() => {
-    setLoading(true);
     setTimeout(() => {
       getTask();
-      setLoading(false);
     }, 1500);
   }, []);
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={[styles.nameUser, {fontFamily: 'Montserrat-SemiBold'}]}>
-          Mateus
+      <View style={[styles.header]}>
+        <Clipboard name="clipboard" size={28} color="#ECECEC" />
+        <Text
+          style={{
+            fontFamily: 'Montserrat-SemiBold',
+            color: '#ececec',
+            fontSize: 18,
+            marginLeft: 14,
+          }}>
+          Tarefas do dia
         </Text>
-
-        <View style={styles.borderProfile}>
-          <Profile name="user-circle" color="#414040" size={42} />
-          {/* <Image source={ImgProfile} style={styles.imgProfile} /> */}
-        </View>
       </View>
-      <View
-        style={[
-          styles.taskList,
-          {borderTopRightRadius: 15, borderTopLeftRadius: 15},
-        ]}>
-        {/* <Image
-          source={require('../assets/imgs/bgApp.jpg')}
-          style={StyleSheet.absoluteFillObject}
-          blurRadius={15}
-          resizeMode="cover"
-        /> */}
+      <View style={[styles.taskList]}>
         <FlatList
           ListEmptyComponent={
-            loading ? (
-              <View
-                style={{
-                  height: height * 0.9,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <Loading />
-              </View>
-            ) : (
-              <Text
-                style={{
-                  fontFamily: 'Montserrat-Regular',
-                  color: '#919090',
-                  textAlign: 'center',
-                  marginVertical: 300,
-                }}>
-                Você não possui tarefas no momento!
-              </Text>
-            )
-          }
-          refreshControl={
-            <RefreshControl refreshing={refresh} onRefresh={() => getTask()} />
+            <Text
+              style={{
+                fontFamily: 'Montserrat-Regular',
+                color: '#919090',
+                textAlign: 'center',
+                marginVertical: 300,
+              }}>
+              Você não possui tarefas no momento!
+            </Text>
           }
           showsVerticalScrollIndicator={false}
           overScrollMode="never"
@@ -314,21 +281,21 @@ const TasksList = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0C202D',
+    backgroundColor: '#fefefe',
   },
   header: {
     width: '100%',
     height: height * 0.12,
-    paddingHorizontal: 15,
+    paddingHorizontal: 25,
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#0C202D',
+    backgroundColor: '#111',
+    borderBottomRightRadius: 35,
   },
   taskList: {
     width: '100%',
-    height: height * 0.9,
-    backgroundColor: '#f2f2f2',
+    height: height * 0.88,
+    backgroundColor: '#fefefe',
   },
   containerTask: {
     width: 8,
@@ -373,8 +340,8 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   flatStyle: {
-    paddingHorizontal: 15,
-    marginTop: 5,
+    paddingHorizontal: 25,
+    marginTop: 0,
   },
   nameTask: {
     color: '#414040',
