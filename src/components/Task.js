@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import Check from 'react-native-vector-icons/AntDesign';
+import Check from 'react-native-vector-icons/FontAwesome';
 import Trash from 'react-native-vector-icons/FontAwesome5';
 
 const Task = props => {
@@ -11,10 +11,11 @@ const Task = props => {
       style={{
         width: '100%',
         height: 90,
-        marginVertical: 15,
+        marginTop: 12,
+        marginBottom: 6,
         borderRadius: 12,
         backgroundColor: '#fafafa',
-        elevation: 4,
+        elevation: 3,
         alignItems: 'center',
         flexDirection: 'row',
       }}>
@@ -31,31 +32,25 @@ const Task = props => {
           style={{
             flexDirection: 'row',
             justifyContent: 'center',
-            alignItems: 'center',
           }}>
           <TouchableOpacity
             onPress={() => setFinalizado(!finalizado)}
             activeOpacity={0.6}
             style={{
-              width: 25,
-              height: 25,
-              borderRadius: 50,
-              borderWidth: 0.5,
               marginHorizontal: 8,
               justifyContent: 'center',
               alignItems: 'center',
-              borderColor: '#616060',
             }}>
             {finalizado ? (
-              <Check name="check" size={22} color="#616060" />
+              <Check name="check-square-o" size={24} color="#32cd32" />
             ) : (
-              <View />
+              <Check name="square-o" size={24} color="#FF0000" />
             )}
           </TouchableOpacity>
           <Text
             style={[
               props.textStyle,
-              finalizado ? {textDecorationLine: 'line-through'} : {},
+              // finalizado ? {textDecorationLine: 'line-through'} : {},
             ]}>
             {props.text}
           </Text>
@@ -63,7 +58,7 @@ const Task = props => {
         <TouchableOpacity
           style={{padding: 4, marginRight: 8}}
           onPress={props.onPress}>
-          <Trash name="trash" size={20} color={'#717070'} />
+          <Trash name="trash" size={20} color={'#414040'} />
         </TouchableOpacity>
       </View>
     </View>

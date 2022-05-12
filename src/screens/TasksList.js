@@ -14,8 +14,8 @@ import {
 import {api} from '../api';
 import Task from '../components/Task';
 import Icon from 'react-native-vector-icons/AntDesign';
+import BtnAdd from 'react-native-vector-icons/Entypo';
 import Clipboard from 'react-native-vector-icons/FontAwesome5';
-import Profile from 'react-native-vector-icons/FontAwesome';
 
 const {width, height} = Dimensions.get('window');
 
@@ -54,11 +54,6 @@ const TasksList = () => {
       });
     setTask(task.concat({content: text, selected: `${selected}`}));
   };
-
-  // const addTask = () => {
-  //   setTask([...task, {id: Math.random(), content: text, selected}]);
-  //   setText('');
-  // };
 
   const deletTask = id => {
     api
@@ -127,9 +122,7 @@ const TasksList = () => {
       <TouchableOpacity
         style={styles.btnAddTask}
         onPress={() => setVisible(!visible)}>
-        <Text style={{color: '#fefefe', fontSize: 30, fontWeight: '300'}}>
-          +
-        </Text>
+        <BtnAdd name="add-to-list" color="#ececec" size={18} />
       </TouchableOpacity>
       <Modal transparent visible={visible} animationType="fade">
         <View
@@ -148,17 +141,17 @@ const TasksList = () => {
                   width: 30,
                   height: 30,
                   borderRadius: 50,
-                  elevation: 6,
-                  backgroundColor: '#0C202D',
+                  elevation: 4,
+                  backgroundColor: '#111',
                 }}
                 onPress={() => setVisible(!visible)}>
-                <Icon name="close" size={18} color="#fafafa" />
+                <Icon name="close" size={18} color="#ececec" />
               </TouchableOpacity>
             </View>
             <TextInput
               style={styles.input}
-              placeholder="Nome da tarefa"
-              placeholderTextColor={'#000'}
+              placeholder="Descreva sua tarefa"
+              placeholderTextColor={'#111'}
               onChangeText={text => setText(text)}
               maxLength={40}
             />
@@ -171,7 +164,7 @@ const TasksList = () => {
                 }}>
                 Escolha a prioridade da tarefa:
               </Text>
-              <View style={{width: '100%', marginTop: 15}}>
+              <View style={{width: '100%', marginTop: 10}}>
                 <TouchableOpacity
                   onPress={() => setSelected('red')}
                   activeOpacity={0.8}
@@ -186,7 +179,6 @@ const TasksList = () => {
                       width: 30,
                       height: '100%',
                       backgroundColor: '#F44B4B',
-
                       marginRight: 10,
                       borderTopLeftRadius: 5,
                       borderBottomLeftRadius: 5,
@@ -317,7 +309,6 @@ const styles = StyleSheet.create({
   },
   modal: {
     width: width * 0.88,
-    height: height * 0.52,
     borderRadius: 12,
     alignItems: 'center',
     backgroundColor: '#fafafa',
@@ -340,19 +331,19 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   flatStyle: {
-    paddingHorizontal: 25,
+    paddingHorizontal: 20,
     marginTop: 0,
   },
   nameTask: {
     color: '#414040',
+    fontSize: 14.5,
     fontFamily: 'Montserrat-Regular',
   },
   input: {
-    width: '90%',
-    marginVertical: 25,
+    width: '88%',
+    marginVertical: 18,
     borderBottomWidth: 0.5,
-    borderBottomColor: '#414040',
-    borderColor: '#000',
+    borderBottomColor: '#111',
     color: '#414040',
     fontFamily: 'Montserrat-Regular',
   },
@@ -370,9 +361,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '45%',
     height: 35,
+    marginBottom: 16,
     borderRadius: 8,
-    elevation: 6,
-    backgroundColor: '#0C202D',
+    elevation: 4,
+    backgroundColor: '#111',
   },
 });
 
